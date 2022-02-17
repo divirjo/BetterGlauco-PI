@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="24px"
+   viewBox="0 0 24 24"
+   width="24px"
+   fill="#000000"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="rendaVariavel.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs10" />
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="35.916667"
+     inkscape:cx="5.512761"
+     inkscape:cy="11.944316"
+     inkscape:window-width="2400"
+     inkscape:window-height="1284"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6" />
+  <path
+     d="M0 0h24v24H0z"
+     fill="none"
+     id="path2" />
+  <path
+     d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"
+     id="path4" />
+  <path
+     style="fill:#333f4f;stroke-width:0.101547;fill-opacity:1"
+     d="m 2.7075707,17.269196 -0.6890404,-0.68904 3.6960156,-3.696094 3.6960156,-3.6960941 1.9977425,1.9975971 1.997742,1.997598 2.450076,-2.449958 2.450076,-2.4499572 -1.13441,-1.1346634 -1.13441,-1.1346633 h 2.97203 2.972031 v 2.9720305 2.9720304 l -1.134657,-1.134404 -1.134657,-1.1344032 -3.146027,3.1461192 -3.146026,3.146119 -1.99085,-1.990707 C 10.334254,12.895818 9.4258524,12 9.410552,12 c -0.0153,0 -1.3683784,1.340603 -3.0068397,2.979118 -1.6384613,1.638515 -2.9853388,2.979119 -2.993061,2.979119 -0.00772,0 -0.3241084,-0.310069 -0.7030806,-0.689041 z"
+     id="path88" />
+</svg>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<th:block th:include="header-area-logada"></th:block>
+
+<body class="interfaceLogada">
+    <section id="lateral">
+        <th:block th:include="menu-area-logada"></th:block>
+    </section>
+    <main>
+        <section id="cards">
+            <div class="painelCaixa" id="reservaEmergencia">
+                <div class="rotuloCaixa">
+                    <h5>Reserva de emergência</h5>
+                </div>
+                <div class="imgCaixa">
+                    <img src="_imagens/icones/reservaEmergencia.svg" class="img-fluid" alt="Renda fixa">
+                </div>
+                <div class="totalCaixa">
+                    <p>R$ 0,00</p>
+                </div>
+                <div class="percentCaixa">
+                    <p>0,00%</p>
+                </div>
+            </div>
+            <div class="painelCaixa" id="rendaFixa">
+                <div class="rotuloCaixa">
+                    <h5>Crédito privado</h5>
+                </div>
+                <div class="imgCaixa">
+                    <img src="_imagens/icones/rendaFixa.svg" class="img-fluid rounded-start" alt="Renda fixa">
+                </div>
+                <div class="totalCaixa">
+                    <p>R$ 0,00</p>
+                </div>
+                <div class="percentCaixa">
+                    <p>0,00%</p>
+                </div>
+            </div>
+            <div class="painelCaixa" id="multimercados">
+                <div class="rotuloCaixa">
+                    <h5>Multimercados</h5>
+                </div>
+                <div class="imgCaixa">
+                    <img src="_imagens/icones/multimercado.svg" class="img-fluid rounded-start" alt="Multimercado">
+                </div>
+                <div class="totalCaixa">
+                    <p>R$ 0,00</p>
+                </div>
+                <div class="percentCaixa">
+                    <p>0,00%</p>
+                </div>
+            </div>
+            <div class="painelCaixa" id="rendaVariavel">
+                <div class="rotuloCaixa">
+                    <h5>Renda Variável</h5>
+                </div>
+                <div class="imgCaixa">
+                    <img src="_imagens/icones/rendaVariavel.svg" class="img-fluid rounded-start" alt="Renda variável">
+                </div>
+                <div class="totalCaixa">
+                    <p>R$ 0,00</p>
+                </div>
+                <div class="percentCaixa">
+                    <p>0,00%</p>
+                </div>
+            </div>
+            <div class="painelCaixa" id="protecao">
+                <div class="rotuloCaixa">
+                    <h5>Proteções</h5>
+                </div>
+                <div class="imgCaixa">
+                    <img src="_imagens/icones/protecoes.svg" class="img-fluid rounded-start" alt="Proteções">
+                </div>
+                <div class="totalCaixa">
+                    <p>R$ 0,00</p>
+                </div>
+                <div class="percentCaixa">
+                    <p>0,00%</p>
+                </div>
+            </div>
+            <div class="painelCaixa" id="previdencia">
+                <div class="rotuloCaixa">
+                    <h5>Previdência</h5>
+                </div>
+                <div class="imgCaixa">
+                    <img src="_imagens/icones/previdencia.svg" class="img-fluid rounded-start" alt="Previdência">
+                </div>
+                <div class="totalCaixa">
+                    <p>R$ 0,00</p>
+                </div>
+                <div class="percentCaixa">
+                    <p>0,00%</p>
+                </div>
+            </div>
+
+        </section>
+        <section id="graficos">
+            <img src="_imagens/Grafico_modelo.png" class="img-fluid" alt="Exemplo de gráfico">
+        </section>
+        <section id="tabela">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th colspan="6" scope="col">Total</th>
+                        <th colspan="4" scope="col">Reserva Emergência</th>
+                        <th colspan="4" scope="col">Crédito Privado</th>
+                        <th colspan="5" scope="col">Multimercado</th>
+                        <th colspan="5" scope="col">Ações</th>
+                        <th colspan="4" scope="col">Proteção</th>
+                        <th colspan="4" scope="col">Previdência</th>
+                      </tr>
+                  <tr>
+                    <th scope="col">Data Fechamento</th>
+                    <th scope="col">Saldo total</th>
+                    <th scope="col">Investimentos</th>
+                    <th scope="col">Rentabilidade</th>
+                    <th scope="col">%</th>
+                    <th scope="col">% 12 meses</th>
+                    <th scope="col">Saldo total</th>
+                    <th scope="col">Investimentos</th>
+                    <th scope="col">Rentabilidade</th>
+                    <th scope="col">%</th>
+                    <th scope="col">Saldo total</th>
+                    <th scope="col">Investimentos</th>
+                    <th scope="col">Rentabilidade</th>
+                    <th scope="col">%</th>
+                    <th scope="col">Saldo total</th>
+                    <th scope="col">Investimentos</th>
+                    <th scope="col">Dividendos</th>
+                    <th scope="col">Rentabilidade</th>
+                    <th scope="col">%</th>
+                    <th scope="col">Saldo total</th>
+                    <th scope="col">Investimentos</th>
+                    <th scope="col">Dividendos</th>
+                    <th scope="col">Rentabilidade</th>
+                    <th scope="col">%</th>
+                    <th scope="col">Saldo total</th>
+                    <th scope="col">Investimentos</th>
+                    <th scope="col">Rentabilidade</th>
+                    <th scope="col">%</th>
+                    <th scope="col">Saldo total</th>
+                    <th scope="col">Investimentos</th>
+                    <th scope="col">Rentabilidade</th>
+                    <th scope="col">%</th>
+                    <th scope="col">Saldo total</th>
+                    <th scope="col">Investimentos</th>
+                    <th scope="col">Rentabilidade</th>
+                    <th scope="col">%</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">jun/2021</th>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">jul/2021</th>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">ago/2021</th>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                    <td>0,00</td>
+                  </tr>
+                </tbody>
+              </table>
+        </section>
+    </main>
+    
+<th:block th:include="footer"></th:block>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+
+/*________________________________________________________________________
+                    ÁREA PÚBLICA                                        */
+.interfacePublic{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 25% 1fr 1fr;
+    grid-gap: 5px;
+    padding: 5px;
+}
+#headerInicial{
+    grid-column: 2;
+    grid-row: 1;
+}
+#menuSuperior{
+    grid-column: 3;
+    grid-row: 1;
+}
+#loginForm{
+    grid-column: 2;
+    grid-row: 2;
+}
+#conteudo{
+    grid-column: 1/4;
+    grid-row: 2;
+}
+footer{
+    grid-column: 1/4;
+    grid-row: 3;
+}
+
+@media only screen and (max-width: 380px){
+    .interfacePublic{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 5fr 1fr;
+    }
+    #headerInicial{
+        grid-column: 1;
+        grid-row: 1;
+    }
+    #menuSuperior{
+        grid-column: 1;
+        grid-row: 2;
+    }
+    #loginForm{
+        grid-column: 1;
+        grid-row: 3;
+    }
+    #conteudo{
+        grid-column: 1;
+        grid-row: 3;
+    }
+    footer{
+        grid-column: 1;
+        grid-row: 4;
+    }
+}

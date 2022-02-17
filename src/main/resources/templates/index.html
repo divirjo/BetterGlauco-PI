@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<th:block th:include="header"></th:block>
+
+<body class="interfacePublic">
+    <header id="headerInicial">
+        <img id="logoInicio" src="_imagens/logo_color.svg" alt="Logo better glauco">
+        <p class="marcaInicio">Better Glauco</p>
+    </header>
+    <nav id="menuSuperior">
+        <ul>
+            <li>
+                <a href="sobre">
+                    Quem somos
+                </a>
+            </li>
+            <li>
+                <a href="interno">
+                    Entrar
+                </a>
+            </li>
+            <li>
+                <a href="contato">
+                    Contato
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <main id="loginForm">
+        <form>
+            <p>Favor ingressar com a sua conta</p>
+    
+            <div class="form-outline mb-4">
+                <label class="form-label" for="form2Example11">Nome de usuário</label>
+                <input type="email" id="form2Example11" class="form-control backgroudCinza" placeholder="usuário" />
+    
+            </div>
+    
+            <div class="form-outline mb-4">
+                <label class="form-label" for="form2Example22">Senha</label>
+                <input type="password" id="form2Example22" class="form-control backgroudCinza" />
+    
+            </div>
+    
+            <div class="text-center pt-1 mb-5 pb-1">
+                <a href="interno">
+                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">Entrar</button>
+                </a>
+                <a class="text-muted" href="#!">Esqueceu a senha?</a>
+            </div>
+    
+            <div class="d-flex align-items-center justify-content-center pb-4">
+                <p class="mb-0 me-2">Você não tem conta?</p>
+                <button type="button" class="btn btn-outline-primary">Abrir conta</button>
+            </div>
+    
+        </form>
+
+    </main>
+
+<th:block th:include="footer"></th:block>
+
+</body>
+
+</html>

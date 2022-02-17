@@ -1,0 +1,244 @@
+/*________________________________________________________________________
+                    PALETA                                              */
+:root{
+    --corBackgroudMenu: #C3AF78;
+    --corBackgroudSite: white;
+    --corDestaqueLaranja: #fb8464;
+    --corDestaqueAmarelo: #fad97e;
+    --corDestaqueMarrom: #a0694a;
+    --corFonte: #5d4b46;
+    --corFontePreta: black;  
+    --corFonteClara: #8d8464;
+    --corFonteBranca: white;   
+
+    /* Cores Caixas de investimentos*/
+    --corBackgroudTituloReservaEmergencia: #c00000;
+    --corBackgroudReservaEmergencia:  #ff7575;
+    --corBackgroudTituloRendaFixa: #00b050;
+    --corBackgroudRendaFixa:  #92d050;
+    --corBackgroudTituloMultimercado: #e7e6e6;
+    --corBackgroudMultimercado:  #f2f2f2;
+    --corBackgroudTituloAcoes: #333f4f;
+    --corBackgroudAcoes:  #d6dce4;
+    --corBackgroudTituloProtecoes: #3c78d8;
+    --corBackgroudProtecoes: #888EA9DB;
+    --corBackgroudTituloPrevidencia: #454545;
+    --corTextoPrevidencia:  #fad97e;  
+    --corBackgroudTituloCripto: #7030A0;
+    --corBackgroudCripto:  #CBA9E5; 
+    ;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Spartan', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--corFonte);
+}
+a{
+    text-decoration: none;
+    color: var(--corDestaqueLaranja);
+}
+a:hover{
+    text-decoration:underline;
+    color: var(--corFonteClara);
+}
+/*________________________________________________________________________
+         Personaliza Bootstrap                                          */
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--corDestaqueLaranja);
+    box-shadow: 0 0 0 0.25rem var(--corDestaqueLaranja);
+}
+.btn-primary {
+    color: white;
+    background-color: var(--corDestaqueMarrom);
+    border-color: var(--corDestaqueMarrom);
+}
+.btn-primary:hover {
+    color: var(--corFonte);
+    background-color: var(--corDestaqueAmarelo);
+    border-color: var(--corDestaqueMarrom);
+}
+.btn-check:focus + .btn-primary, .btn-primary:focus, .btn-check:checked + .btn-primary, .btn-check:active + .btn-primary, .btn-primary:active, .btn-primary.active, .show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: var(--corDestaqueLaranja);
+    border-color: var(--corBackgroudSite);
+    box-shadow: 0 0 0 0.25rem var(--corDestaqueLaranja);
+}
+.btn-primary:disabled, .btn-primary.disabled {
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+.btn-outline-primary {
+    color: var(--corDestaqueMarrom);
+    background-color: var(--corBackgroudSite);
+    border-color: var(--corDestaqueMarrom);
+}
+.btn-outline-primary:hover {
+    color: var(--corDestaqueMarrom);
+    background-color: var(--corBackgroudSite);
+    border-color: var(--corDestaqueAmarelo);
+}
+.btn-check:focus + .btn-outline-primary, .btn-outline-primary:focus, .btn-check:checked + .btn-outline-primary, .btn-check:active + .btn-outline-primary, .btn-outline-primary:active, .btn-outline-primary.active, .show > .btn-outline-primary.dropdown-toggle {
+    color: var(--corFonte);
+    background-color: var(--corDestaqueLaranja);
+    border-color: var(--corBackgroudSite);
+    box-shadow: 0 0 0 0.25rem var(--corDestaqueLaranja);
+}
+.btn-outline-primary:disabled, .btn-outline-primary.disabled {
+    color: var(--corFonte);
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+/*________________________________________________________________________
+                    INDEX                                               */
+img#logoInicio{
+    width: 20%;
+}
+.marcaInicio{
+    font-family: 'Dancing Script', cursive;
+    font-size:xx-large;
+}
+#headerInicial{
+    text-align: center;
+}
+#menuSuperior{
+    text-align: right;
+
+}
+#menuSuperior ul{
+    list-style: none;
+    padding-top: 25%;
+    padding-left: 0px;
+    padding-right: 5%;
+    vertical-align: bottom;
+}
+#menuSuperior li{
+    display: inline;
+    padding: 5px;
+}
+.backgroudCinza, #loginForm{
+    background-color: lightgray;
+}
+#loginForm{
+    padding: 5%;
+}
+.backgroudCinza{
+    border-color: var(--corDestaqueLaranja);
+}
+/*________________________________________________________________________
+                    ÁREA LOGADA                                        */
+section#lateral{
+    background-color: var(--corBackgroudMenu);
+}
+section#lateral header{
+    text-align: center;
+}
+img#logo{
+    width: 50px;
+}
+.marca{
+    font-family: 'Dancing Script', cursive;
+    font-size:small;
+}
+section#lateral nav{
+    font-weight: bold;
+    padding-top: 30%;
+}
+section#lateral nav ul{
+    list-style: none;
+    padding-left: 0px;
+    text-align: center;
+}
+section#lateral nav a{
+    color: var(--corFonte);
+}
+section#lateral nav a:hover, #menuSuperior a:hover{
+    text-decoration: none;
+    background-color: var(--corDestaqueLaranja);
+    color: var(--corFontePreta);
+    padding: 5px;
+}
+section#controles {
+    text-align: center;
+}
+section#controles img{
+    margin: 5px;
+}
+section#controles a:hover{
+    background-color: var(--corDestaqueLaranja);
+}
+section#cards {
+    font-size: small;
+    font-weight: bold;
+    color: var(--corFontePreta);
+}
+section#cards h5{
+    text-align: center;
+    font-size: small;
+    font-weight: bold;
+    padding: 5px;
+}
+section#cards img{
+    width: 5em;
+}
+#reservaEmergencia{
+    background-color: var(--corBackgroudReservaEmergencia);
+}
+#reservaEmergencia h5{
+    background-color: var(--corBackgroudTituloReservaEmergencia);
+    color: var(--corFontePreta);
+}
+#rendaFixa{
+    background-color: var(--corBackgroudRendaFixa);
+}
+#rendaFixa h5{
+    background-color: var(--corBackgroudTituloRendaFixa);
+    color: var(--corFontePreta);
+}
+#multimercados{
+    background-color: var(--corBackgroudMultimercado);
+}
+#multimercados h5{
+    background-color: var(--corBackgroudTituloMultimercado);
+    color: var(--corFontePreta);
+}
+#rendaVariavel{
+    background-color: var(--corBackgroudAcoes);
+}
+#rendaVariavel h5{
+    background-color: var(--corBackgroudTituloAcoes);
+    color: var(--corFonteBranca);
+}
+#protecao{
+    background-color: var(--corBackgroudProtecoes);
+}
+#protecao h5{
+    background-color: var(--corBackgroudTituloProtecoes);
+    color: var(--corFonteBranca);
+}
+#previdencia{
+    background-color: var(--corBackgroudTituloPrevidencia);
+}
+#previdencia h5, #previdencia p{
+    color: var(--corDestaqueAmarelo);
+}
+#previdencia h5{
+    background-color: var(--corFontePreta);
+}
+section#graficos {
+    text-align: center;
+}
+section#graficos img{
+    text-align: center;
+    height: 400px;
+}
+section#tabela{
+    font-size: xx-small;
+}
+footer{
+    text-align: center;
+}
