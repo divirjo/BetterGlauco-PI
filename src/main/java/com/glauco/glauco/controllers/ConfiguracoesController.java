@@ -7,13 +7,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
-public class AreaLogadaController {
+public class ConfiguracoesController {
 
-	
-	@RequestMapping(value = "/interno")
-	public ModelAndView CarregaPagina() {
-		ModelAndView pagina = new ModelAndView("area-logada");
+	@RequestMapping(value = "/config")
+	public ModelAndView carregaMenu() {
+		ModelAndView pagina = new ModelAndView("configuracoes/configuracoes");
 
 		return pagina;
 	}
+	
 }

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<th:block th:include="header-area-logada"></th:block>
+
+<body class="interfaceLogada">
+
+    <section id="lateral">
+        <th:block th:include="menu-area-logada"></th:block>
+    </section>
+    <main>
+        <section id="conteudo">
+        		<h1>Configurações</h1>
+        
+        	<div class="card" style="width: 18rem;">
+				  <div class="card-body">
+				    <h5 class="card-title">Caixas</h5>
+				    <h6 class="card-subtitle mb-2 text-muted">Tipos de alocação</h6>
+				    <p class="card-text">Configurar as caixas de investimento, incluindo o percentual de alocação teórica</p>
+				    <a href="/config/caixas" class="card-link">Configurar</a>
+				  </div>
+				</div>
+        
+        </section>
+    </main>
+    
+ 
+    
+<th:block th:include="footer"></th:block>
+
+</body>
+
+</html>
