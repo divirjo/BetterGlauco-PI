@@ -5,29 +5,9 @@
 <th:block th:include="header"></th:block>
 
 <body class="interfacePublic">
-    <header id="headerInicial">
-        <img id="logoInicio" src="_imagens/logo_color.svg" alt="Logo better glauco">
-        <p class="marcaInicio">Better Glauco</p>
-    </header>
-    <nav id="menuSuperior">
-        <ul>
-            <li>
-                <a href="sobre">
-                    Quem somos
-                </a>
-            </li>
-            <li>
-                <a href="interno">
-                    Entrar
-                </a>
-            </li>
-            <li>
-                <a href="contato">
-                    Contato
-                </a>
-            </li>
-        </ul>
-    </nav>
+	
+	<th:block th:include="menu-area-aberta"></th:block>
+    
     <main id="loginForm">
         <form>
             <p>Favor ingressar com a sua conta</p>

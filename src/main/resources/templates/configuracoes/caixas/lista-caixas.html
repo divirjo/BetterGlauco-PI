@@ -8,13 +8,46 @@
 
     <section id="lateral">
         <th:block th:include="menu-area-logada"></th:block>
+        
     </section>
     <main>
-    
      	<section id="conteudo">
-        Caixas
+        	<h1>Caixas de investimento </h1>
         
+        
+                    <table class="table table-hover  table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Caixa</th>
+                    <th scope="col">Alocação teórica</th>
+                    <th scope="col">Percentual alocação teórica</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr th:each="caixa: ${listaCaixas}">
+                    <th scope="row"><span th:text="${caixa.nome}"></span></th>
+                    <td><span th:text="${caixa.nome}"></span></td>
+                    <td><span th:text="${caixa.alocacaoTeorica}"></span></td>
+                    <td><span th:text="${caixa.percentualAlocacaoTeorica}"></span></td>
+                    <td><a th:href="${(#mvc.url('CaixaControl#deletarCaixa').arg(0, caixa.id)).build()}" class="waves-effect waves-light btn-small"><button type="button"
+                                class="btn btn-danger">Excluir</button></a></td>
+                  	<td><a th:href="${(#mvc.url('CaixaControl#editarCaixa').arg(0, caixa.id)).build()}"><button type="button" class="btn btn-primary">Editar</button></a></td>
+                  </tr>
+                </tbody>
+              </table>
+        
+        <p>
+        	<a href="config-nova-caixa">
+        		 <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">Nova caixa</button>	
+        	</a>
+        	<a href="config">
+        		 <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">Voltar</button>	
+        	</a>
+        </p>
         </section>
+        
     </main>
     
  
