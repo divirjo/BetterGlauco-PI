@@ -7,7 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
-
+import javax.validation.constraints.PositiveOrZero;
 
 @Entity 
 public class Caixa implements Serializable{
@@ -21,10 +21,10 @@ public class Caixa implements Serializable{
 	@NotEmpty
 	private String nome;
 	
-	@NotEmpty
+	@PositiveOrZero
 	private float alocacaoTeorica;
 	
-	@NotEmpty
+	@PositiveOrZero
 	private float percentualAlocacaoTeorica;
 
 	public int getId() {

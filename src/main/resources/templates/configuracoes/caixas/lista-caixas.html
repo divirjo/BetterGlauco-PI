@@ -28,12 +28,11 @@
                 <tbody>
                   <tr th:each="caixa: ${listaCaixas}">
                     <th scope="row"><span th:text="${caixa.nome}"></span></th>
-                    <td><span th:text="${caixa.nome}"></span></td>
                     <td><span th:text="${caixa.alocacaoTeorica}"></span></td>
                     <td><span th:text="${caixa.percentualAlocacaoTeorica}"></span></td>
-                    <td><a th:href="${(#mvc.url('CaixaControl#deletarCaixa').arg(0, caixa.id)).build()}" class="waves-effect waves-light btn-small"><button type="button"
+                    <td><a th:href="${(#mvc.url('CC#deletarCaixa').arg(0, caixa.id)).build()}" class="waves-effect waves-light btn-small"><button type="button"
                                 class="btn btn-danger">Excluir</button></a></td>
-                  	<td><a th:href="${(#mvc.url('CaixaControl#editarCaixa').arg(0, caixa.id)).build()}"><button type="button" class="btn btn-primary">Editar</button></a></td>
+                  	<td><a th:href="${(#mvc.url('CC#editarCaixa').arg(0, caixa.id)).build()}"><button type="button" class="btn btn-primary">Editar</button></a></td>
                   </tr>
                 </tbody>
               </table>
