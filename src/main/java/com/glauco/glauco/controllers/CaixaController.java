@@ -84,7 +84,7 @@ public class CaixaController {
 	@RequestMapping("/config-editar-caixa")
 	public ModelAndView editarCaixa(int id) {
 		Caixa dadosCaixa = caixaRep.findById(id);
-		ModelAndView pagina = new ModelAndView("configuracoes/caixas/updade-caixa");
+		ModelAndView pagina = new ModelAndView("configuracoes/caixas/update-caixa");
 		pagina.addObject("caixa", dadosCaixa);
 		return pagina;
 	}

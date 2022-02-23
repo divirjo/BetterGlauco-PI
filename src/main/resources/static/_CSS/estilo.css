@@ -130,7 +130,7 @@ img#logoInicio{
     border-color: var(--corDestaqueLaranja);
 }
 /*________________________________________________________________________
-                    ÁREA LOGADA                                        */
+                    Ã�REA LOGADA                                        */
 section#lateral{
     background-color: var(--corBackgroudMenu);
 }
@@ -238,6 +238,9 @@ section#graficos img{
 }
 section#tabela{
     font-size: xx-small;
+}
+.numero{
+	text-align: right;
 }
 footer{
     text-align: center;

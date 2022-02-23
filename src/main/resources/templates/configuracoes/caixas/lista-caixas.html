@@ -19,22 +19,34 @@
                 <thead>
                   <tr>
                     <th scope="col">Caixa</th>
-                    <th scope="col">Alocação teórica</th>
-                    <th scope="col">Percentual alocação teórica</th>
+                    <th scope="col" class="numero">Alocação teórica</th>
+                    <th scope="col" class="numero">Percentual alocação teórica</th>
                     <th scope="col"></th>
                     <th scope="col"></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr th:each="caixa: ${listaCaixas}">
-                    <th scope="row"><span th:text="${caixa.nome}"></span></th>
-                    <td><span th:text="${caixa.alocacaoTeorica}"></span></td>
-                    <td><span th:text="${caixa.percentualAlocacaoTeorica}"></span></td>
-                    <td><a th:href="${(#mvc.url('CC#deletarCaixa').arg(0, caixa.id)).build()}" class="waves-effect waves-light btn-small"><button type="button"
+                    <th scope="row">
+                    	<span th:text="${caixa.nome}"></span></th>
+                    <td class="numero" >
+                    	<span th:text="${#numbers.formatDecimal(caixa.alocacaoTeorica,1,'POINT',2,'COMMA')}"></span></td>
+                    <td class="numero">
+                    	<span th:text="${#numbers.formatDecimal(caixa.percentualAlocacaoTeorica,1,'POINT',2,'COMMA')}"></span></td>
+                    <td>
+                    	<a th:href="${(#mvc.url('CC#deletarCaixa').arg(0, caixa.id)).build()}" class="waves-effect waves-light btn-small"><button type="button"
                                 class="btn btn-danger">Excluir</button></a></td>
-                  	<td><a th:href="${(#mvc.url('CC#editarCaixa').arg(0, caixa.id)).build()}"><button type="button" class="btn btn-primary">Editar</button></a></td>
+                  	<td>
+                  		<a th:href="${(#mvc.url('CC#editarCaixa').arg(0, caixa.id)).build()}"><button type="button" class="btn btn-primary">Editar</button></a></td>
                   </tr>
                 </tbody>
+                <tfoot>
+                	<th>Total:</td>
+                	<td></td>
+                	<td class="numero" ><span th:text="${#numbers.formatDecimal(#aggregates.sum(listaCaixas.![percentualAlocacaoTeorica]),1,'POINT',2,'COMMA')}"></span></td>
+                	<td></td>
+                	<td></td>
+                </tfoot>
               </table>
         
         <p>
