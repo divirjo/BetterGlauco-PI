@@ -10,9 +10,51 @@
         <th:block th:include="menu-area-logada"></th:block>
     </section>
     <main>
-        <section id="conteudo">
-        		<h1>Configurações</h1>
-        
+    	<h1>Configurações</h1>
+    	<section id="busca">
+    		
+    		<form class="row g-3" method="post">
+    		<div class="col-md-2">
+            </div>
+            <div class="col-md-4">
+    			<input class="form-control"
+									type="search" placeholder="localizar configuração..."
+									aria-label="Pesquisar" name="buscar" id="buscar" required>				
+									
+    		</div>
+    		<div class="col-md-2">
+    			<button class="btn btn-primary" type="submit">Pesquisar</button>
+            </div>
+    		</form> 
+    		<div class="row">
+    		<div class="col-3">
+            </div>
+    		<div class="col-6 justify-content-center">
+				<p>
+					<i><span th:text="${mensagem}"></span></i>
+				</p>
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-3">
+            </div>
+    		<div class="col-6 justify-content-center">
+						<table
+							class="table table-hover table-responsive w-auto table-striped">
+
+							<tbody>
+								<tr th:each="caixa : ${caixasLocalizadas}">
+									<td><a
+										th:href="${(#mvc.url('CC#editarCaixa').arg(0, caixa.id)).build()}"><span
+											th:text="${caixa.nome}"></span></a> - em <i>caixas.</i></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+    		 </div>
+    	</section>
+    	<br/>
+        <section id="conteudo">       
         	<div class="card" style="width: 18rem;">
 				  <div class="card-body">
 				    <h5 class="card-title">Caixas</h5>
