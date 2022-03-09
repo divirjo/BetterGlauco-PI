@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.glauco.glauco.repository.CaixaRepository;
+import com.glauco.glauco.repository.InstituicaoFinanceiraRepository;
 
 /**
  * CONTROLLER CONFIGURACOES
@@ -21,6 +22,8 @@ public class ConfiguracoesController {
 	@Autowired
 	private CaixaRepository caixaRep;
 	
+	@Autowired
+	private InstituicaoFinanceiraRepository instituicaoRep;
 	
 	/**
 	 * CONSTRÓI a VIEW PRINCIPAL
@@ -44,6 +47,8 @@ public class ConfiguracoesController {
 		pagina.addObject("mensagem", "Resultados da busca por " + buscar);
 		
 		pagina.addObject("caixasLocalizadas", caixaRep.findByNomes(buscar));
+		
+		pagina.addObject("instituicoesLocalizadas", instituicaoRep.findByNomes(buscar));
 		
 		return pagina;
 		

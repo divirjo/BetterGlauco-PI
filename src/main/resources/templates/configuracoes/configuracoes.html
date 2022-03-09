@@ -6,70 +6,81 @@
 
 <body class="interfaceLogada">
 
-    <section id="lateral">
-        <th:block th:include="menu-area-logada"></th:block>
-    </section>
-    <main>
-    	<h1>ConfiguraÁıes</h1>
-    	<section id="busca">
-    		
-    		<form class="row g-3" method="post">
-    		<div class="col-md-2">
-            </div>
-            <div class="col-md-4">
-    			<input class="form-control"
-									type="search" placeholder="localizar configuraÁ„o..."
-									aria-label="Pesquisar" name="buscar" id="buscar" required>				
-									
-    		</div>
-    		<div class="col-md-2">
-    			<button class="btn btn-primary" type="submit">Pesquisar</button>
-            </div>
-    		</form> 
-    		<div class="row">
-    		<div class="col-3">
-            </div>
-    		<div class="col-6 justify-content-center">
-				<p>
-					<i><span th:text="${mensagem}"></span></i>
-				</p>
-			</div>
+	<section id="lateral">
+		<th:block th:include="menu-area-logada"></th:block>
+	</section>
+	<main>
+		<h1>Configura√ß√µes</h1>
+		<section id="busca">
+
+			<form class="row g-3" method="post">
+				<div class="col-md-2"></div>
+				<div class="col-md-4">
+					<input class="form-control" type="search"
+						placeholder="localizar configura√ß√£o..." aria-label="Pesquisar"
+						name="buscar" id="buscar" required>
+
+				</div>
+				<div class="col-md-2">
+					<button class="btn btn-primary" type="submit">Pesquisar</button>
+				</div>
+			</form>
+			<div class="row">
+				<div class="col-3"></div>
+				<div class="col-6 justify-content-center">
+					<p>
+						<i><span th:text="${mensagem}"></span></i>
+					</p>
+				</div>
 			</div>
 			<div class="row">
-			<div class="col-3">
-            </div>
-    		<div class="col-6 justify-content-center">
-						<table
-							class="table table-hover table-responsive w-auto table-striped">
+				<div class="col-3"></div>
+				<div class="col-6 justify-content-center">
+					<table
+						class="table table-hover table-responsive w-auto table-striped">
 
-							<tbody>
-								<tr th:each="caixa : ${caixasLocalizadas}">
-									<td><a
-										th:href="${(#mvc.url('CC#editarCaixa').arg(0, caixa.id)).build()}"><span
-											th:text="${caixa.nome}"></span></a> - em <i>caixas.</i></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-    		 </div>
-    	</section>
-    	<br/>
-        <section id="conteudo">       
-        	<div class="card" style="width: 18rem;">
-				  <div class="card-body">
-				    <h5 class="card-title">Caixas</h5>
-				    <h6 class="card-subtitle mb-2 text-muted">Tipos de alocaÁ„o</h6>
-				    <p class="card-text">Configurar as caixas de investimento, incluindo o percentual de alocaÁ„o teÛrica</p>
-				    <a href="/config-caixas" class="card-link">Configurar</a>
-				  </div>
+						<tbody>
+							<tr th:each="caixa : ${caixasLocalizadas}">
+								<td><a
+									th:href="${(#mvc.url('CC#editarCaixa').arg(0, caixa.id)).build()}"><span
+										th:text="${caixa.nome}"></span></a> - em <i>caixas.</i></td>
+							</tr>
+							<tr th:each="instituicao : ${instituicoesLocalizadas}">
+								<td><a
+									th:href="${(#mvc.url('IFC#editarInstituicao').arg(0, instituicao.id)).build()}"><span
+										th:text="${instituicao.nome}"></span></a> - em <i>institui√ß√µes financeiras.</i></td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
-        
-        </section>
-    </main>
-    
- 
-    
-<th:block th:include="footer"></th:block>
+			</div>
+		</section>
+		<br />
+		<section id="conteudo">
+			<div class="card" style="width: 18rem;">
+				<div class="card-body">
+					<h5 class="card-title">Caixas</h5>
+					<h6 class="card-subtitle mb-2 text-muted">Tipos de aloca√ß√£o</h6>
+					<p class="card-text">Configurar as caixas de investimento,
+						incluindo o percentual de aloca√ß√£o te√≥rica</p>
+					<a href="/config-caixas" class="card-link">Configurar</a>
+				</div>
+			</div>
+			<div class="card" style="width: 18rem;">
+				<div class="card-body">
+					<h5 class="card-title">Institui√ß√µes financeiras</h5>
+					<h6 class="card-subtitle mb-2 text-muted">Cadastro bancos e corretoras</h6>
+					<p class="card-text">Configurar os bancos e corretoras cadastrados</p>
+					<a href="/config-instituicao-financeira" class="card-link">Configurar</a>
+				</div>
+			</div>
+
+		</section>
+	</main>
+
+
+
+	<th:block th:include="footer"></th:block>
 
 </body>
 

@@ -5,42 +5,46 @@
 <th:block th:include="header"></th:block>
 
 <body class="interfacePublic">
-	
+
 	<th:block th:include="menu-area-aberta"></th:block>
-    
-    <main id="loginForm">
-        <form>
-            <p>Favor ingressar com a sua conta</p>
-    
-            <div class="form-outline mb-4">
-                <label class="form-label" for="form2Example11">Nome de usuário</label>
-                <input type="email" id="form2Example11" class="form-control backgroudCinza" placeholder="usuário" />
-    
-            </div>
-    
-            <div class="form-outline mb-4">
-                <label class="form-label" for="form2Example22">Senha</label>
-                <input type="password" id="form2Example22" class="form-control backgroudCinza" />
-    
-            </div>
-    
-            <div class="text-center pt-1 mb-5 pb-1">
-                <a href="interno">
-                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">Entrar</button>
-                </a>
-                <a class="text-muted" href="#!">Esqueceu a senha?</a>
-            </div>
-    
-            <div class="d-flex align-items-center justify-content-center pb-4">
-                <p class="mb-0 me-2">Você não tem conta?</p>
-                <button type="button" class="btn btn-outline-primary">Abrir conta</button>
-            </div>
-    
-        </form>
 
-    </main>
+	<main id="loginForm">
+		<form>
+			<p>Favor ingressar com a sua conta</p>
 
-<th:block th:include="footer"></th:block>
+			<div class="form-outline mb-4">
+				<label class="form-label" for="form2Example11">Nome de
+					usuÃ¡rio</label> <input type="email" id="form2Example11"
+					class="form-control backgroudCinza" placeholder="usuario" />
+
+			</div>
+
+			<div class="form-outline mb-4">
+				<label class="form-label" for="form2Example22">Senha</label> <input
+					type="password" id="form2Example22"
+					class="form-control backgroudCinza" />
+
+			</div>
+
+			<div class="text-center pt-1 mb-5 pb-1">
+				<a href="interno">
+					<button
+						class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+						type="button">Entrar</button>
+				</a> <a class="text-muted" href="#!">Esqueceu a senha?</a>
+			</div>
+
+			<div class="d-flex align-items-center justify-content-center pb-4">
+				<p class="mb-0 me-2">VocÃª nÃ£o tem conta?</p>
+				<button type="button" class="btn btn-outline-primary">Abrir
+					conta</button>
+			</div>
+
+		</form>
+
+	</main>
+
+	<th:block th:include="footer"></th:block>
 
 </body>
 
