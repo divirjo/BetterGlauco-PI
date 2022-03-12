@@ -50,14 +50,19 @@
 									th:href="${(#mvc.url('IFC#editarInstituicao').arg(0, instituicao.id)).build()}"><span
 										th:text="${instituicao.nome}"></span></a> - em <i>instituições financeiras.</i></td>
 							</tr>
+							<tr th:each="tipoAtivo : ${tiposAtivoLocalizados}">
+								<td><a
+									th:href="${(#mvc.url('TAC#editarTipoAtivo').arg(0, tipoAtivo.id)).build()}"><span
+										th:text="${tipoAtivo.nome}"></span></a> - em <i>tipos de ativo.</i></td>
+							</tr>
 						</tbody>
 					</table>
 				</div>
 			</div>
 		</section>
 		<br />
-		<section id="conteudo">
-			<div class="card" style="width: 18rem;">
+		<section id="conteudo" class="row g-3">
+			<div class="card col-md-4" style="width: 18rem;">
 				<div class="card-body">
 					<h5 class="card-title">Caixas</h5>
 					<h6 class="card-subtitle mb-2 text-muted">Tipos de alocação</h6>
@@ -66,7 +71,7 @@
 					<a href="/config-caixas" class="card-link">Configurar</a>
 				</div>
 			</div>
-			<div class="card" style="width: 18rem;">
+			<div class="card col-md-4" style="width: 18rem;">
 				<div class="card-body">
 					<h5 class="card-title">Instituições financeiras</h5>
 					<h6 class="card-subtitle mb-2 text-muted">Cadastro bancos e corretoras</h6>
@@ -74,7 +79,14 @@
 					<a href="/config-instituicao-financeira" class="card-link">Configurar</a>
 				</div>
 			</div>
-
+			<div class="card col-md-4" style="width: 18rem;">
+				<div class="card-body">
+					<h5 class="card-title">Tipos de ativo</h5>
+					<h6 class="card-subtitle mb-2 text-muted">Cadastro das classes de ativos</h6>
+					<p class="card-text">Configurar as classes de ativos, como FII, ações, fundos, etc.</p>
+					<a href="/config-tipo-ativo" class="card-link">Configurar</a>
+				</div>
+			</div>
 		</section>
 	</main>
 

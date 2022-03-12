@@ -44,7 +44,7 @@ public class InstituicaoFinanceiraController {
 	 * 
 	 */
 	@RequestMapping("/config-nova-instituicao")
-	public String novaCaixa() {
+	public String novaInstituicaoFinanceira() {
 		return "configuracoes/InstituicaoFinanceira/form-instituicao";
 	}
 	

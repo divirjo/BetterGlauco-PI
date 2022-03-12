@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<th:block th:include="header-area-logada"></th:block>
+
+<body class="interfaceLogada">
+
+	<section id="lateral">
+		<th:block th:include="menu-area-logada"></th:block>
+
+	</section>
+	<main>
+		<section id="conteudo">
+			<h1>Cadastro de tipos de ativos</h1>
+
+
+			<table class="table table-hover  table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Tipo de ativo</th>
+						<th scope="col">Sigla</th>
+						<th scope="col" class="numero">Percentual alocação teórica (%)</th>
+						<th scope="col"></th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="tipoAtivo: ${listaTiposAtivos}">
+						<th scope="row"><span th:text="${tipoAtivo.nome}"></span></th>
+						<td><span
+							th:text="${tipoAtivo.sigla}"></span></td>
+						<td>
+						<td class="numero"><span
+							th:text="${#numbers.formatDecimal(tipoAtivo.percentualAlocacaoTeorica,1,'POINT',2,'COMMA')}"></span></td>
+						<td>
+						<td><a
+							th:href="${(#mvc.url('TAC#deletarTipoAtivo').arg(0, tipoAtivo.id)).build()}"
+							class="waves-effect waves-light btn-small"><button
+									type="button" class="btn btn-danger">Excluir</button></a></td>
+						<td><a
+							th:href="${(#mvc.url('TAC#editarTipoAtivo').arg(0, tipoAtivo.id)).build()}"><button
+									type="button" class="btn btn-primary">Editar</button></a></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>
+				<a href="config-novo-tipo-ativo">
+					<button
+						class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+						type="button">Novo tipo de ativo</button>
+				</a> <a href="config">
+					<button
+						class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+						type="button">Voltar</button>
+				</a>
+			</p>
+		</section>
+
+	</main>
+
+
+
+	<th:block th:include="footer"></th:block>
+
+</body>
+
+</html>

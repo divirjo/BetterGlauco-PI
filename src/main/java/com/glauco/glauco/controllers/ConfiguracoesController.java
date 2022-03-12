@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.glauco.glauco.repository.CaixaRepository;
 import com.glauco.glauco.repository.InstituicaoFinanceiraRepository;
+import com.glauco.glauco.repository.TipoAtivoRepository;
 
 /**
  * CONTROLLER CONFIGURACOES
@@ -24,6 +25,9 @@ public class ConfiguracoesController {
 	
 	@Autowired
 	private InstituicaoFinanceiraRepository instituicaoRep;
+	
+	@Autowired
+	private TipoAtivoRepository tipoRep;
 	
 	/**
 	 * CONSTRÓI a VIEW PRINCIPAL
@@ -49,6 +53,8 @@ public class ConfiguracoesController {
 		pagina.addObject("caixasLocalizadas", caixaRep.findByNomes(buscar));
 		
 		pagina.addObject("instituicoesLocalizadas", instituicaoRep.findByNomes(buscar));
+		
+		pagina.addObject("tiposAtivoLocalizados", tipoRep.findByNomes(buscar));
 		
 		return pagina;
 		

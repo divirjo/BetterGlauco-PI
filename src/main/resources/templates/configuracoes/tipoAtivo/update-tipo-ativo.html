@@ -11,7 +11,7 @@
 	</section>
 	<main>
 		<section id="conteudo">
-			<h1>Nova caixa de investimento</h1>
+			<h1>Alterar tipo ativo</h1>
 
 
 			<th:block th:include="mensagem-validacao"></th:block>
@@ -19,26 +19,27 @@
 			<form class="row g-3" method="post">
 
 				<div class="col-md-4">
-					<label for="nome" class="form-label">Nome da caixa</label> <input
-						type="text" class="form-control" name="nome" required>
+					<label for="nome" class="form-label">Tipo de ativo</label> <input
+						type="text" class="form-control" name="nome" required
+						th:attr="value = ${tipoAtivo.nome}">
 				</div>
-				<div class="col-md-8"></div>
 				<div class="col-md-3">
-					<label for="alocacaoTeorica" class="form-label">Alocação
-						teórica(R$)</label> <input type="number" step=".01" class="form-control"
-						name="alocacaoTeorica" required>
+					<label for="sigla" class="form-label">Sigla</label> <input type="text"
+						class="form-control" name="sigla" required
+						th:attr="value = ${tipoAtivo.sigla}">
 				</div>
 				<div class="col-md-3">
 					<label for="percentualAlocacaoTeorica" class="form-label">Percentual
 						alocação teórica(%)</label> <input type="number" step=".01"
-						class="form-control" name="percentualAlocacaoTeorica" required>
+						class="form-control" name="percentualAlocacaoTeorica" required
+						th:attr="value = ${tipoAtivo.percentualAlocacaoTeorica}">
 				</div>
-				<div class="col-md-6"></div>
+				<div class="col-md-2"></div>
 				<div class="col-md-6">
-					<button class="btn btn-primary" type="submit">Cadastrar</button>
+					<button class="btn btn-primary" type="submit">Atualizar</button>
 				</div>
 				<div class="col-md-6">
-					<a href="config-caixas">
+					<a href="config-tipo-ativo">
 						<button class="btn btn-primary" type="button">Voltar</button>
 					</a>
 				</div>
