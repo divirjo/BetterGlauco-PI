@@ -7,17 +7,23 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.Date;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import com.glauco.glauco.models.Ativo;
 import com.glauco.glauco.models.Caixa;
 import com.glauco.glauco.models.TipoAtivo;
+import com.glauco.glauco.models.PosicaoAtivo;
 import com.glauco.glauco.models.InstituicaoFinanceira;
 import com.glauco.glauco.repository.AtivoRepository;
 import com.glauco.glauco.repository.CaixaRepository;
 import com.glauco.glauco.repository.InstituicaoFinanceiraRepository;
 import com.glauco.glauco.repository.TipoAtivoRepository;
+import com.glauco.glauco.repository.PosicaoAtivoRepository;
 
 /**
  * CONTROLLER ATIVO
@@ -38,6 +44,9 @@ public class AtivoController {
 	
 	@Autowired
 	private TipoAtivoRepository tipoRep;
+	
+	@Autowired
+	private PosicaoAtivoRepository posicaoRep;
 	
 	@RequestMapping("/config-ativo")
 	public ModelAndView listaTipos() {
@@ -66,16 +75,32 @@ public class AtivoController {
 	
 	
 	@RequestMapping(value = "/config-novo-ativo", method = RequestMethod.POST)
-	public String form(@Valid Ativo ativo, BindingResult resultado, RedirectAttributes atributos) {
+	public String form(@Valid Ativo ativo, BindingResult resultado, RedirectAttributes atributos, 
+			@RequestParam("data") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Date data, 
+			@RequestParam("valorInvestido") Float valorInvestido) {
 
 		if (resultado.hasErrors()) {
 			atributos.addFlashAttribute("mensagem_erro", "Verifique os campos");
 			return "redirect:/config-novo-ativo";
 		}
-
+		
 		ativoRep.save(ativo);
-		atributos.addFlashAttribute("mensagem", "Ativo cadastrado com sucesso!");
+		
+		/*
+		 * Salva a posição inicial do ativo
+		 */
+		PosicaoAtivo posicaoInicial = new PosicaoAtivo();
+		
+		posicaoInicial.setAtivo(ativo);
+		posicaoInicial.setData(data);
+		posicaoInicial.aporteInvestimento(valorInvestido);
+		posicaoRep.save(posicaoInicial);
+		
+		atributos.addFlashAttribute("mensagem", "Ativo cadastrado com sucesso");
 		return "redirect:/config-novo-ativo";
+	
+	
+	
 	}
 
 	
@@ -118,8 +143,9 @@ public class AtivoController {
 			return "redirect:/config-editar-ativo?id=" + id;	
 		}
 		
-		ativoRep.save(ativo);
-		atributos.addFlashAttribute("mensagem", "Ativo alterado com sucesso!");
+		ativoRep.save(ativo);		
+	
+		atributos.addFlashAttribute("mensagem", "Ativo atualizado com sucesso");
 
 		return "redirect:/config-editar-ativo?id=" + id;	
 	}

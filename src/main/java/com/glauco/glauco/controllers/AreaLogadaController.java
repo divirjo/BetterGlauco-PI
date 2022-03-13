@@ -20,7 +20,7 @@ public class AreaLogadaController {
 	 */
 	@RequestMapping("/interno")
 	public String CarregaPagina() {
-		return "area-logada";
+		return "area-logada/area-logada";
 		
 	}
 	
