@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<th:block th:include="header-area-logada"></th:block>
+
+<body class="interfaceLogada">
+
+	<section id="lateral">
+		<th:block th:include="menu-area-logada"></th:block>
+
+	</section>
+	<main>
+		<section id="conteudo">
+			<h1>Cadastro de ativos</h1>
+
+
+			<table class="table table-hover  table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Ativo</th>
+						<th scope="col">Sigla</th>
+						<th scope="col">CNPJ</th>
+						<th scope="col">Caixa</th>
+						<th scope="col">Tipo Ativo</th>
+						<th scope="col">Corretora</th>
+						<th scope="col" class="numero">Percentual alocação teórica (%)</th>
+						<th scope="col"></th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="ativo: ${listaAtivos}">
+						<th scope="row"><span th:text="${ativo.nome}"></span></th>
+						<td><span
+							th:text="${ativo.sigla}"></span>
+						</td>
+						<td><span
+							th:text="${ativo.cnpj}"></span>
+						</td>						
+						<td><span
+							th:text="${ativo.caixa.nome}"></span>
+						</td>
+						<td><span
+							th:text="${ativo.tipoAtivo.sigla}"></span>
+						</td>
+						<td><span
+							th:text="${ativo.corretora.nome}"></span>
+						</td>
+						<td class="numero"><span
+							th:text="${#numbers.formatDecimal(ativo.percentualAlocacaoTeorica,1,'POINT',2,'COMMA')}"></span>
+						</td>
+						<td><a
+							th:href="${(#mvc.url('AC#deletarAtivo').arg(0, ativo.id)).build()}"
+							class="waves-effect waves-light btn-small"><button
+									type="button" class="btn btn-danger">Excluir</button></a>
+						</td>
+						<td><a
+							th:href="${(#mvc.url('AC#editarAtivo').arg(0, ativo.id)).build()}"><button
+									type="button" class="btn btn-primary">Editar</button></a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<p>
+				<a href="config-novo-ativo">
+					<button
+						class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+						type="button">Novo tipo de ativo</button>
+				</a> <a href="config">
+					<button
+						class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+						type="button">Voltar</button>
+				</a>
+			</p>
+		</section>
+
+	</main>
+
+
+
+	<th:block th:include="footer"></th:block>
+
+</body>
+
+</html>

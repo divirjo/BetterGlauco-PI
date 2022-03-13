@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<th:block th:include="header-area-logada"></th:block>
+
+<body class="interfaceLogada">
+
+	<section id="lateral">
+		<th:block th:include="menu-area-logada"></th:block>
+	</section>
+	<main>
+		<section id="conteudo">
+			<h1>Alterar ativo</h1>
+
+
+			<th:block th:include="mensagem-validacao"></th:block>
+
+			<form class="row g-3" method="post">
+
+				<div class="col-md-4">
+					<label for="nome" class="form-label">Nome</label> <input
+						type="text" class="form-control" name="nome" required
+						th:attr="value = ${ativo.nome}">
+				</div>
+				<div class="col-md-2">
+					<label for="sigla" class="form-label">Sigla</label> <input type="text"
+						class="form-control" name="sigla" required
+						th:attr="value = ${ativo.sigla}">
+				</div>
+				<div class="col-md-3">
+					<label for="sigla" class="form-label">CNPJ</label> <input type="text"
+						class="form-control" name="cnpj"
+						th:attr="value = ${ativo.cnpj}">
+				</div>
+				<div class="col-md-3">
+					<label for="percentualAlocacaoTeorica" class="form-label">Percentual
+						alocação teórica(%)</label> <input type="number" step=".01"
+						class="form-control" name="percentualAlocacaoTeorica" required
+						th:attr="value = ${ativo.percentualAlocacaoTeorica}">
+				</div>
+				<div class="col-md-12">
+				</div>
+				<div class="col-md-4">
+					<label class="form-label" for="caixa">Caixa</label>
+					<select class="form-select" name="caixa" required th:field="*{ativo.caixa.id}">
+	 					<option th:each="caixa: ${listaCaixas}" 
+	 						th:value="${caixa.id}" 
+	 						th:text="${caixa.nome}">
+	 					</option>
+					</select>
+				</div>
+				<div class="col-md-4">
+					<label class="form-label" for="tipoAtivo"> Tipo ativo</label>
+					<select class="form-select" name="tipoAtivo" required th:field="*{ativo.tipoAtivo.id}">
+	 					<option th:each="tipoAtivo: ${listaTiposAtivo}" 
+	 						th:value = "${tipoAtivo.id}"
+	 						th:text="${tipoAtivo.nome}">
+	 					</option>
+					</select>
+				</div>
+				<div class="col-md-4">
+					<label class="form-label" for="corretora"> Corretora</label>
+					<select class="form-select" name="corretora" required th:field="*{ativo.corretora.id}">
+	 					<option th:each="corretora: ${listaCorretoras}" 
+	 						th:value = "${corretora.id}"
+	 						th:text="${corretora.nome}">
+	 					</option>
+					</select>
+				</div>
+				<div class="col-md-6">
+					<button class="btn btn-primary" type="submit">Atualizar</button>
+				</div>
+				<div class="col-md-6">
+					<a href="config-ativo">
+						<button class="btn btn-primary" type="button">Voltar</button>
+					</a>
+				</div>
+			</form>
+
+		</section>
+	</main>
+
+
+
+	<th:block th:include="footer"></th:block>
+
+</body>
+
+</html>

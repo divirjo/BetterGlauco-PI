@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.glauco.glauco.repository.AtivoRepository;
 import com.glauco.glauco.repository.CaixaRepository;
 import com.glauco.glauco.repository.InstituicaoFinanceiraRepository;
 import com.glauco.glauco.repository.TipoAtivoRepository;
@@ -28,6 +29,9 @@ public class ConfiguracoesController {
 	
 	@Autowired
 	private TipoAtivoRepository tipoRep;
+	
+	@Autowired
+	private AtivoRepository ativoRep;
 	
 	/**
 	 * CONSTRÓI a VIEW PRINCIPAL
@@ -55,6 +59,8 @@ public class ConfiguracoesController {
 		pagina.addObject("instituicoesLocalizadas", instituicaoRep.findByNomes(buscar));
 		
 		pagina.addObject("tiposAtivoLocalizados", tipoRep.findByNomes(buscar));
+		
+		pagina.addObject("ativosLocalizados", ativoRep.findByNomes(buscar));
 		
 		return pagina;
 		

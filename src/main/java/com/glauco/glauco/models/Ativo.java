@@ -15,7 +15,7 @@ import javax.validation.constraints.PositiveOrZero;
 @Entity 
 public class Ativo implements Serializable{
 	
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 4L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,8 +28,6 @@ public class Ativo implements Serializable{
 	private String sigla;
 	
 	private long cnpj;
-	
-	private byte alocacaoTeorica;
 	
 	@PositiveOrZero
 	private float percentualAlocacaoTeorica;
@@ -73,14 +71,6 @@ public class Ativo implements Serializable{
 
 	public void setCnpj(long cnpj) {
 		this.cnpj = cnpj;
-	}
-
-	public byte getAlocacaoTeorica() {
-		return alocacaoTeorica;
-	}
-
-	public void setAlocacaoTeorica(byte alocacaoTeorica) {
-		this.alocacaoTeorica = alocacaoTeorica;
 	}
 
 	public float getPercentualAlocacaoTeorica() {
