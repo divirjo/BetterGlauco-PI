@@ -57,17 +57,13 @@ public class PosicaoAtivo implements Serializable{
 		return cotas;
 	}
 
-	//public void setCotas(float cotas) {
-	//	this.cotas = cotas;
-	//}
+	public void setCotas(float cotas) {
+		this.cotas = cotas;
+	}
 
 	public float getValorCota() {
 		return valorCota;
 	}
-
-	//public void setValorCotas(float valorCotas) {
-	//	this.valorCotas = valorCotas;
-	//}
 
 	public Ativo getAtivo() {
 		return ativo;
@@ -86,6 +82,7 @@ public class PosicaoAtivo implements Serializable{
 	 * 
 	 */
 	public void setValorTotal(float valorTotal) {
+		
 		if (cotas != 0) {
 			valorCota = valorTotal / cotas;
 		}

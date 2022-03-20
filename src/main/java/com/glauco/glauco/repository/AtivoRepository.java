@@ -15,11 +15,16 @@ public interface AtivoRepository extends CrudRepository<Ativo, Integer>{
 	Ativo findByNome(String nome);
 	List<Ativo> findByCorretora(InstituicaoFinanceira Corretora);
 	
+	
 	/*
 	 * IMPLEMENTA A BUSCA
 	 */
 	@Query(value = "select u from Ativo u where u.nome like %?1% OR u.sigla like %?1%")
 	List<Ativo>findByNomes(String nome);
 	
-	
+	/*
+	 * Corretoras que possuem ativos
+	 */
+	@Query(value = "SELECT distinct a.corretora FROM Ativo a ")
+	List<InstituicaoFinanceira> findDistinctByCorretora();
 }

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<th:block th:include="header-area-logada"></th:block>
+
+<body class="interfaceLogada">
+
+	<section id="lateral">
+		<th:block th:include="menu-area-logada"></th:block>
+	</section>
+	<main>
+		<section id="conteudo">
+			<h1>Atualização da posição dos investimentos</h1>
+			<br>
+			<h2> Atualizar o <span th:text="${ativoSelecionado.sigla}"></span> - <span th:text="${ativoSelecionado.nome}"></h2>
+
+
+			<th:block th:include="mensagem-validacao"></th:block>
+
+			<form class="row g-3" method="post">
+
+				<div class="col-md-4">
+					<label for="data" class="form-label">Data</label> <input
+						type="date" class="form-control" name="data" required>
+				</div>
+				<div class="col-md-4">
+					<label for="valorAtual" class="form-label">valor total atual</label> 
+					<input type="number" step=".01"
+						class="form-control" name="valorAtual" value="0" required>
+				</div>
+				<div class="col-md-4">
+					<label for="aporte" class="form-label">valor investido</label> 
+					<input type="number" step=".01"
+						class="form-control" name="aporte" value="0" required>
+				</div>
+				<div class="col-md-4">
+					<a th:href="@{'atualizar-investimentos-ativos'(id=${ativoSelecionado.corretora.id})}">
+						<button class="btn btn-primary" type="button">Voltar</button>
+					</a>
+				</div>
+				<div class="col-md-4">
+					<input type="hidden" name="idAtivo" th:value="${ativoSelecionado.id}" >
+				</div>
+				<div class="col-md-4">
+					<button class="btn btn-primary" type="submit">Atualizar</button>
+				</div>
+			</form>
+
+		</section>
+		<section id="historico">
+			<table class="table table-hover  table-striped">
+						<thead>
+							<tr>
+								<th scope="col">Data atualização</th>
+								<th scope="col" class="numero">Valor cota</th>
+								<th scope="col" class="numero">Cotas</th>
+								<th scope="col" class="numero">Total</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="posicaoAtivo: ${historico}">
+
+								<td scope="row"><span th:text="${posicaoAtivo.data}"></span></td>
+								<td class="numero"><span
+									th:text="${#numbers.formatDecimal(posicaoAtivo.valorCota,1,'POINT',2,'COMMA')}"></span>
+								</td>
+								<td class="numero"><span
+									th:text="${#numbers.formatDecimal(posicaoAtivo.cotas,1,'POINT',4,'COMMA')}"></span>
+								</td>
+								<td class="numero"><span
+									th:text="${#numbers.formatDecimal(posicaoAtivo.valorTotal,1,'POINT',2,'COMMA')}"></span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+		
+		</section>
+		
+	</main>
+
+
+
+	<th:block th:include="footer"></th:block>
+
+</body>
+
+</html>
