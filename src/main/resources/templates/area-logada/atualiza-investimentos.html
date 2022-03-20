@@ -11,56 +11,16 @@
 	</section>
 	<main>
 		<section id="conteudo">
-			<h1>Novo ativo</h1>
+			<h1>Atualização da posição dos investimentos</h1>
 
 
 			<th:block th:include="mensagem-validacao"></th:block>
 
 			<form class="row g-3" method="post">
 
-				<div class="col-md-4">
-					<label for="nome" class="form-label">Nome</label> <input
-						type="text" class="form-control" name="nome" required>
-				</div>
-				<div class="col-md-2">
-					<label for="sigla" class="form-label">Sigla</label> <input type="text"
-						class="form-control" name="sigla" required>
-				</div>
-				<div class="col-md-3">
-					<label for="sigla" class="form-label">CNPJ</label> <input type="text"
-						class="form-control" name="cnpj" value="0">
-				</div>
-				<div class="col-md-3">
-					<label for="percentualAlocacaoTeorica" class="form-label">Percentual
-						alocação teórica(%)</label> <input type="number" step=".01"
-						class="form-control" name="percentualAlocacaoTeorica" value="0" required>
-				</div>
-				<div class="col-md-12">
-				</div>
-				<div class="col-md-4">
-					<label class="form-label" for="caixa">Caixa</label>
-					<select class="form-select" name="caixa" required>
-	  					<option selected>Selecionar...</option>
-	 					<option th:each="caixa: ${listaCaixas}" 
-	 						th:value = "${caixa.id}"
-	 						th:text = "${caixa.nome}">
-	 					</option>
-					</select>
-				</div>
-				<div class="col-md-4">
-					<label class="form-label" for="tipoAtivo"> Tipo ativo</label>
-					<select class="form-select" name="tipoAtivo" required>
-	  					<option selected>Selecionar...</option>
-	 					<option th:each="tipoAtivo: ${listaTiposAtivo}" 
-	 						th:value = "${tipoAtivo.id}"
-	 						th:text = "${tipoAtivo.nome}">
-	 					</option>
-					</select>
-				</div>
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<label class="form-label" for="corretora"> Corretora</label>
-					<select class="form-select" name="corretora" required>
-	  					<option selected>Selecionar...</option>
+					<select class="form-select" id="corretora" name="corretora" required th:field="*{corretoraAtiva.id}">
 	 					<option th:each="corretora: ${listaCorretoras}" 
 	 						th:value = "${corretora.id}"
 	 						th:text = "${corretora.nome}">
@@ -68,9 +28,38 @@
 					</select>
 				</div>
 				<div class="col-md-6">
+				</div>
+				<div class="col-md-4">
+					<button class="btn btn-primary" type="submit">Carregar investimentos</button>
+				</div>
+			</form>
+			<br/>
+			
+			<form class="row g-3" method="post">
+				<div class="col-md-4">
+					<label for="nome" class="form-label">Data</label> <input
+						type="date" class="form-control" name="data" required>
+				</div>
+				<div class="col-md-8">
+				</div>
+				<p th:each="investimento: ${listaInvestimentosCorretora}"> 
+				<span th:text="${investimento.nome)"></span>
+					</p>
+					<div class="col-md-6">
+						<label for="nome" class="form-label">Nome</label> <input
+							type="text" class="form-control" name="nome" >
+					</div>
+					<div class="col-md-4">
+						<label for="valorInvestido" class="form-label">valor investido</label> 
+						<input type="number" step=".01"
+							class="form-control" name="valorInvestido" >
+					</div>
+					<div class="col-md-2">
+					</div>
+				<div class="col-md-4">
 					<button class="btn btn-primary" type="submit">Cadastrar</button>
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-4">
 					<a href="config-ativo">
 						<button class="btn btn-primary" type="button">Voltar</button>
 					</a>

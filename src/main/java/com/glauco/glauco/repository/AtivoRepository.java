@@ -6,13 +6,14 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import com.glauco.glauco.models.Ativo;
-
+import com.glauco.glauco.models.InstituicaoFinanceira;
 
 
 public interface AtivoRepository extends CrudRepository<Ativo, Integer>{
 
 	Ativo findById(int id);
 	Ativo findByNome(String nome);
+	List<Ativo> findByCorretora(InstituicaoFinanceira Corretora);
 	
 	/*
 	 * IMPLEMENTA A BUSCA

@@ -11,6 +11,7 @@ public interface InstituicaoFinanceiraRepository extends CrudRepository<Institui
 	
 	InstituicaoFinanceira findById(int id);
 	InstituicaoFinanceira findByNome(String nome);
+	InstituicaoFinanceira findFirstByOrderByNomeAsc();
 	
 	/*
 	 * IMPLEMENTA A BUSCA
