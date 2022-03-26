@@ -10,97 +10,7 @@
 	</section>
 	<main>
 		<section id="cards">
-			<div class="painelCaixa" id="reservaEmergencia">
-				<div class="rotuloCaixa">
-					<h5>Reserva de emergência</h5>
-				</div>
-				<div class="imgCaixa">
-					<img src="_imagens/icones/reservaEmergencia.svg" class="img-fluid"
-						alt="Renda fixa">
-				</div>
-				<div class="totalCaixa">
-					<p>R$ 0,00</p>
-				</div>
-				<div class="percentCaixa">
-					<p>0,00%</p>
-				</div>
-			</div>
-			<div class="painelCaixa" id="rendaFixa">
-				<div class="rotuloCaixa">
-					<h5>Crédito privado</h5>
-				</div>
-				<div class="imgCaixa">
-					<img src="_imagens/icones/rendaFixa.svg"
-						class="img-fluid rounded-start" alt="Renda fixa">
-				</div>
-				<div class="totalCaixa">
-					<p>R$ 0,00</p>
-				</div>
-				<div class="percentCaixa">
-					<p>0,00%</p>
-				</div>
-			</div>
-			<div class="painelCaixa" id="multimercados">
-				<div class="rotuloCaixa">
-					<h5>Multimercados</h5>
-				</div>
-				<div class="imgCaixa">
-					<img src="_imagens/icones/multimercado.svg"
-						class="img-fluid rounded-start" alt="Multimercado">
-				</div>
-				<div class="totalCaixa">
-					<p>R$ 0,00</p>
-				</div>
-				<div class="percentCaixa">
-					<p>0,00%</p>
-				</div>
-			</div>
-			<div class="painelCaixa" id="rendaVariavel">
-				<div class="rotuloCaixa">
-					<h5>Renda Variável</h5>
-				</div>
-				<div class="imgCaixa">
-					<img src="_imagens/icones/rendaVariavel.svg"
-						class="img-fluid rounded-start" alt="Renda variável">
-				</div>
-				<div class="totalCaixa">
-					<p>R$ 0,00</p>
-				</div>
-				<div class="percentCaixa">
-					<p>0,00%</p>
-				</div>
-			</div>
-			<div class="painelCaixa" id="protecao">
-				<div class="rotuloCaixa">
-					<h5>Proteções</h5>
-				</div>
-				<div class="imgCaixa">
-					<img src="_imagens/icones/protecoes.svg"
-						class="img-fluid rounded-start" alt="Proteções">
-				</div>
-				<div class="totalCaixa">
-					<p>R$ 0,00</p>
-				</div>
-				<div class="percentCaixa">
-					<p>0,00%</p>
-				</div>
-			</div>
-			<div class="painelCaixa" id="previdencia">
-				<div class="rotuloCaixa">
-					<h5>Previdência</h5>
-				</div>
-				<div class="imgCaixa">
-					<img src="_imagens/icones/previdencia.svg"
-						class="img-fluid rounded-start" alt="Previdência">
-				</div>
-				<div class="totalCaixa">
-					<p>R$ 0,00</p>
-				</div>
-				<div class="percentCaixa">
-					<p>0,00%</p>
-				</div>
-			</div>
-
+			<th:block th:include="area-logada/menu-caixas"></th:block>	
 		</section>
 		<section id="graficos">
 			<img src="_imagens/Grafico_modelo.png" class="img-fluid"
@@ -158,8 +68,11 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<th scope="row">jun/2021</th>
+					<tr th:each="posicaoAtivo: ${listaAtivos}">
+						<th scope="row" >
+							<span th:text="${posicaoAtivo.data}"></span>
+						</th>
+						
 						<td>0,00</td>
 						<td>0,00</td>
 						<td>0,00</td>

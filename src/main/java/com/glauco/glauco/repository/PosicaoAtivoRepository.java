@@ -9,6 +9,7 @@ import org.springframework.data.repository.query.Param;
 
 import com.glauco.glauco.models.PosicaoAtivo;
 import com.glauco.glauco.models.Ativo;
+import com.glauco.glauco.models.Caixa;
 import com.glauco.glauco.models.InstituicaoFinanceira;
 
 public interface PosicaoAtivoRepository extends CrudRepository<PosicaoAtivo, Integer>{
@@ -19,6 +20,7 @@ public interface PosicaoAtivoRepository extends CrudRepository<PosicaoAtivo, Int
 	
 	List<PosicaoAtivo> findAtivoByAtivoCorretoraOrderByAtivoSigla(InstituicaoFinanceira corretora);
 
+	List<PosicaoAtivo> findAtivoByAtivoCaixaOrderByAtivoSigla(Caixa caixa);
 	
 	/*
 	 * Corretoras que possuem ativos
