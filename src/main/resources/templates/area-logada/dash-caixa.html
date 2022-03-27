@@ -14,20 +14,22 @@
 			<th:block th:include="area-logada/menu-caixas"></th:block>
 		</section>
 		
+		<h1 th:text="${caixaAtiva.nome}"></h1>
+		
 		<section id="graficos">
-			<img src="_imagens/Grafico_modelo.png" class="img-fluid"
-				alt="Exemplo de gr�fico">
+			
 		</section>
-		<section id="tabela">
+		<section >
 			<table class="table table-hover  table-striped">
 						<thead>
 							<tr>
 								<th scope="col">Ativo</th>
-								<th scope="col">C�digo</th>
+								<th scope="col">Código</th>
 								<th scope="col">Data atualização</th>
 								<th scope="col" class="numero">Valor cota</th>
 								<th scope="col" class="numero">Cotas</th>
 								<th scope="col" class="numero">Total</th>
+								<th scope="col"></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -45,8 +47,21 @@
 								<td class="numero"><span
 									th:text="${#numbers.formatDecimal(posicaoAtivo.valorTotal,1,'POINT',2,'COMMA')}"></span>
 								</td>
+							<td><a th:href="@{'atualizar-posicao-ativo'(id=${posicaoAtivo.ativo.id})}">
+								<button type="button" class="btn btn-primary">Consultar ativo</button></a>
+							</td>
 							</tr>
 						</tbody>
+						<tfoot>
+							<th>Total</th>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td class="numero"><span
+							th:text="${#numbers.formatDecimal(#aggregates.sum(listaAtivos.![valorTotal]),1,'POINT',2,'COMMA')}"></span></td>
+							<td></td>
+						</tfoot>
 					</table>
 		</section>
 	</main>

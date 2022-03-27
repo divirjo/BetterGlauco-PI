@@ -2,6 +2,8 @@ package com.glauco.glauco.controllers;
 
 import java.util.Date;
 import java.util.Iterator;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -119,6 +121,11 @@ public class AtualizaInvestimentosController {
 
 		if (!data.after(posicaoAnterior.getData())) {
 			atributos.addFlashAttribute("mensagem_erro", "Erro. Data deve ser superior à cadastrada anteriormente");
+			return "redirect:/atualizar-posicao-ativo?id="+ ativo.getId();
+		}
+		
+		if (LocalDate.now().isBefore(data.toInstant().atZone(ZoneId.systemDefault()).toLocalDate())) {
+			atributos.addFlashAttribute("mensagem_erro", "Erro. Data deve ser igual ou anterior a hoje");
 			return "redirect:/atualizar-posicao-ativo?id="+ ativo.getId();
 		}
 			

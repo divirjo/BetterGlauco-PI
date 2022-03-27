@@ -17,10 +17,11 @@ public interface PosicaoAtivoRepository extends CrudRepository<PosicaoAtivo, Int
 	PosicaoAtivo findById(int id);
 	PosicaoAtivo findTop1ByAtivoOrderByDataDesc(Ativo ativo);
 	List<PosicaoAtivo> findByAtivoOrderByDataDesc(Ativo ativo);
+	//List<PosicaoAtivo> findAllOrderByDataDesc();
 	
 	List<PosicaoAtivo> findAtivoByAtivoCorretoraOrderByAtivoSigla(InstituicaoFinanceira corretora);
 
-	List<PosicaoAtivo> findAtivoByAtivoCaixaOrderByAtivoSigla(Caixa caixa);
+	List<PosicaoAtivo> findAtivoByAtivoCaixaOrderByAtivoSiglaAscDataDesc(Caixa caixa);
 	
 	/*
 	 * Corretoras que possuem ativos
@@ -38,6 +39,7 @@ public interface PosicaoAtivoRepository extends CrudRepository<PosicaoAtivo, Int
 			+ "limit 1;")
 	List<PosicaoAtivo> findTop1ByAtivoCorretoraOrderByDataDesc(InstituicaoFinanceira Corretora);
 */
+	
 
 }
 
